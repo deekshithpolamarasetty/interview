@@ -1,0 +1,43 @@
+✅ What is Middleware?
+Middleware is code that executes before the controller in the request lifecycle.
+It sits between:
+Client Request → Middleware → Controller → Response
+
+NestJS middleware is built on top of Express.js (or Fastify), but Nest adds:
+Class-based structure
+Dependency Injection
+Module-level configuration
+
+✅ Why Implement Middleware in NestJS?
+You implement middleware to handle cross-cutting concerns that must run before routing.
+Typical reasons:
+
+🔹 1. Centralized Request Logging
+Log every incoming request in one place.
+Example use:
+Method
+URL
+Timestamp
+IP
+
+🔹 2. Request Pre-processing
+Modify or enrich the request:
+Add custom headers
+Attach user/device info
+Normalize payloads
+
+🔹 3. Basic Authentication Checks
+Lightweight checks like:
+API key presence
+Header validation
+
+🔹 4. Performance Monitoring
+Track response time:
+Start timer in middleware
+End in response event
+
+🔹 5. Reusability & Clean Architecture
+Avoid repeating the same logic in every controller.
+Middleware lets you:
+✅ Write once
+✅ Apply globally or per route

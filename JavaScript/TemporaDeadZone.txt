@@ -1,0 +1,17 @@
+TEmporal Dead Zone - From hoisting to assigning the phase between them is temporal dead zone
+
+let a= 10; const b = 20; var c=30
+
+let and const stays in temporal dead zone (Stored in seperate memory space not in global object)
+1) They will get allocated some memory but no in the global object 
+2) If we hoist it we get declaration error a reference error which mean need to declare it before accessing it
+3) Memory was allocated for them
+
+Var get hoisted because memory allocation was done for it in global space mean global object 
+1) So if we hoist it then ite return udefined 
+
+
+script= {a:undefined, b:undefined}
+global = {c:30}
+
+1) We can access window.c, because they are in the global scope but we cannot access window.a, window.x because they are in the temporal dead zone
