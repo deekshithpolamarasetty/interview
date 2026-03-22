@@ -9,7 +9,29 @@ Example: console.log("start")
         console.log("middle")
         },5000)
         console.log("end")
+
+setTimeout(), console
 2) From the above example when ever code start executing a new global execution context is created and pushe into a callstact.
   * so first when start executing it calls the console api provided by chrome and it logged in console
   * Then setTimeout was registered in timer and the callback will be regsitered api provied by chrome and then end will be logged and GEC will be cleard in the call stack
 Now comes to the picture event loop and call back queue.
+3) Like call stack for intevral timers new callback queue will be created after the timer was done it pushed to callback event loop checks 
+   weather something is there or not in the callback queue and if anything there in the callback queue that will be pushed to 
+   call stack it was pushed by event loop.
+   * so now a new execution context is created in call stack and the function will be executed.
+
+DOM
+example-2:-In the above example if we include a button which refers to DOM api and if we log data for a click event
+  * First it registers a callback and it sits in the WEB api's environment till we click the button if we click the button then it moves to 
+    the callback queue and event loop moves the value in call back queue to callstack and new execution context will be created and then it will be executed 
+    and the button action hits the console api and it will be logged in console and poped out from the callstack.
+
+* Eventloop check continuesly check weather the callstack is empty or not to execute the callback functions that are in callback queue 
+  If empty then eventloop executes and push them to callstack and execution conext created then executes and poped out from the callstack.
+
+Microtasks(High priority given for it)
+* All the promises that returns from the callback function goes inside the microtask queue.
+* Mutation observer, promises will goes to microtask queue
+
+CallbackQueue(Macrotask)
+* SetTimeouts, DOM Api's , event listners all will goes to callback queue
