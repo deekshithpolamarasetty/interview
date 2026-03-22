@@ -1,0 +1,15 @@
+1) web api's provided by browser 
+  * setTimeout()
+  * DOM Api's like (Document.getElementById)
+  * fetch()
+  * console
+  * Localstorage
+Example: console.log("start")
+        setTimeout(function cb(){
+        console.log("middle")
+        },5000)
+        console.log("end")
+2) From the above example when ever code start executing a new global execution context is created and pushe into a callstact.
+  * so first when start executing it calls the console api provided by chrome and it logged in console
+  * Then setTimeout was registered in timer and the callback will be regsitered api provied by chrome and then end will be logged and GEC will be cleard in the call stack
+Now comes to the picture event loop and call back queue.
