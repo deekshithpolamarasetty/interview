@@ -1,0 +1,10 @@
+1) System Design have two types 
+  * HLD
+  * LLD
+
+2) Distributed Systems - any app that disrtibutes customer requests to multiple servers and each server is connected 
+we get three problems from the distributed systems.
+  * CAP theorm
+  * C - consistency 
+  * A - availability 
+  * P - Partioning Tolerence 
